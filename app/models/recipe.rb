@@ -5,8 +5,10 @@ class Recipe < ActiveRecord::Base
 
   def ingredients_attributes=(ingredients_attributes)
     ingredients_attributes.each do |i, ingredient_attributes|
-      binding.pry
-      self.ingredients.build(ingredient_attributes) unless ingredient_attributes["name"].blank?
+      unless ingredient_attributes["name"].blank?
+        ingredient_to_add = Ingredient.find_or_create_by(name: ingredient_attributes["name"])
+        self.ingredients << ingredient_to_add
+      end
     end
   end
 end
