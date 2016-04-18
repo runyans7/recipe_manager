@@ -1,5 +1,3 @@
-require 'pry'
-
 class RecipesController < ApplicationController
 
   def index
@@ -8,14 +6,19 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @recipe }
+    end
   end
 
   def new
     @recipe = Recipe.new
-    6.times { @recipe.ingredients.new }
   end
 
   def create
+
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save

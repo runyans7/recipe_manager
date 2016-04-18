@@ -3,14 +3,17 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
-  <fieldset>
+  <fieldset id="ingredient_fields">
     <legend>Ingredients</legend>
-    <%= f.fields_for :ingredients do |ingredient_builder| %>
+    <input type="text" name="recipe[ingredients_attributes][][name]">
+
+    <!-- <%= f.fields_for :ingredients do |ingredient_builder| %>
       <%= ingredient_builder.text_field :name %>
-    <% end %>
+    <% end %> -->
   </fieldset>
   <%= f.submit %>
 <% end %>
+    <p><button id="add_ingredient_field">Additional Ingredient</button></p>
 
 
 <!-- <form action="">
