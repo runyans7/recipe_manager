@@ -7,7 +7,7 @@ class Recipe < ActiveRecord::Base
     ingredients_attributes.each do |ingredient_attributes|
       unless ingredient_attributes["name"].blank?
         ingredient_to_add = Ingredient.find_or_create_by(name: ingredient_attributes["name"].downcase)
-        self.ingredients << ingredient_to_add
+        self.recipe_ingredients.build(ingredient: ingredient_to_add)
       end
     end
   end
