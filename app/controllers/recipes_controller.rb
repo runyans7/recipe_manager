@@ -2,10 +2,13 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+    @recipe = Recipe.new
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    @comment = Comment.new
+    @comments = @recipe.comments
   end
 
   def new

@@ -1,0 +1,3 @@
+$("#comment_content").val("");
+var $ul = $("div#comments ul");
+$ul.append("<%=j(render('comments/comment', :comment => @comment)) %>");

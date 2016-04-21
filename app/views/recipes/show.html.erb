@@ -3,11 +3,22 @@
 <ul>
   <% @recipe.ingredients.each do |ingredient| %>
     <li><%= link_to ingredient.name, ingredient_path(ingredient), remote: true %></li>
-
   <% end %>
 </ul>
 
 
 <h4>Recipes with this ingredient</h4>
 <div id="other_recipes">
+</div>
+
+<h4>Recipe Comments</h4>
+
+<%= form_for [@recipe, @comment], remote: true do |f| %>
+    <%= f.text_area :content %>
+    <br>
+    <%= f.submit %>
+<% end %>
+
+<div id="comments">
+  <%= render 'comments/comments' %>
 </div>

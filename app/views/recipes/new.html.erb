@@ -6,32 +6,12 @@
   <fieldset id="ingredient_fields">
     <legend>Ingredients</legend>
     <input type="text" name="recipe[ingredients_attributes][][name]">
-
-    <!-- <%= f.fields_for :ingredients do |ingredient_builder| %>
-      <%= ingredient_builder.text_field :name %>
-    <% end %> -->
   </fieldset>
   <%= f.submit %>
 <% end %>
-    <p><button id="add_ingredient_field">Additional Ingredient</button></p>
 
+<p><button id="add_ingredient_field">Additional Ingredient</button></p>
 
-<!-- <form action="">
-  <p>
-    <label for="">Recipe Name</label>
-    <input type="text" name="">
-  </p>
+<div class="recipe_display">
 
-  <fieldset>
-    <legend>Ingredients</legend>
-    <label for="">Ingredient 1</label>
-    <input type="text" name="recipe[ingredients_attributes][][name]">
-    <label for="">Ingredient 2</label>
-    <input type="text" name="recipe[ingredients_attributes][][name]">
-    <label for="">Ingredient 3</label>
-    <input type="text" name="recipe[ingredients_attributes][][name]">
-  </fieldset>
-  <p>
-    <input type="submit">
-  </p>
-</form> -->
+</div>
